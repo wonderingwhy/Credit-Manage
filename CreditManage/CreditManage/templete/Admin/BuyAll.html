@@ -1,0 +1,29 @@
+﻿<div id="page_main" class="clearfix">
+    <div class="page-right">
+        <div class="site-nav"><span>当前位置 : </span><a href="mHandler.ashx">公司主页</a> &gt;&gt; <a href="#" title="订单管理">订单管理</a></div>
+        <div>
+            <table>
+                <tr><th style="width:100px">买家</th><th style="width:80px">名称</th><th style="width:80px">单价</th><th style="width: 30px">数量</th><th style="width: 80px">总价</th><th style="width: 130px">日期</th><th style="width: 80px">审核情况</th><th></th></tr>
+                #foreach($bpg in $Data.data)
+                <tr>
+                    <td style="display:none">$bpg.buy.Id</td>
+                    <td>$bpg.person.Phone</td>
+                    <td>$bpg.good.Name</td>
+                    <td>¥$bpg.good.Value.00</td>
+                    <td>$bpg.buy.Num</td>
+                    <td>¥$bpg.sum.00</td>
+                    <td>$bpg.buy.Date</td>
+                    #if($bpg.buy.IsCheck==true)
+                    <td><a style="color:blue">已审核</a></td>
+                    <td><input type="button" disabled="disabled" style="color:gray" value="审核通过" /></td>
+                    #else
+                    <td><a style="color:red"> 未审核 </a></td>
+                    <td><input type="button" style="color:blue" onclick="updateBuy(this)" value="审核通过" /></td>
+                    #end
+
+                </tr>
+                #end
+            </table>
+        </div>
+    </div>
+    <div class="page-left">

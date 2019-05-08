@@ -1,0 +1,410 @@
+﻿<div class="index-search" style="height:200px">
+
+    <div id="tabs1">
+        <div class="menu1box">
+            <ul id="menu1">
+                <li class="hover" onmouseover="setTab(1,0)">登录</li>
+                <li onmouseover="setTab(1,1)">注册</li>
+
+            </ul>
+        </div>
+        <div class="main1box">
+            <div class="main" id="main1">
+                <ul class="block">
+                    <li>
+                        <form style="display:none" id="isLog" name="islog">
+                            <div style="width:100px;margin-left:0px">
+                                <h4 id="level"></h4>
+                                <a id="LogName"></a>
+                                <div id="normal_able">
+                                    <a href="logoutHandler.ashx">[注销]</a><br />
+                                    <a href="#" onclick="window.location.href = 'myBuyHandler.ashx?phone=' + document.getElementById('LogName').innerHTML">[我的订单]</a><br />
+                                    <a href="#" onclick="window.location.href = 'myValueHandler.ashx?phone=' + document.getElementById('LogName').innerHTML">[我的积分]</a><br />
+                                </div>
+                                <div id="mng_able" style="display:none">
+                                    <a href="userMngHandler.ashx">[用户管理]</a><br />
+                                    <a href="buyMngHandler.ashx">[订单管理]</a><br />
+                                    <a href="valueMngHandler.ashx">[积分管理]</a><br />
+                                </div>
+                            </div>
+                        </form>
+
+                        <form id="log" name="log">
+                            <div class="line">
+                                <label for="phoneLog">Phone</label>
+                                <input class="left" type="text" placeholder="用户名/手机" id="phoneLog" name="phoneLog" />
+                            </div>
+                            <br />
+                            <div class="line">
+                                <label for="psdLog">Psd</label>
+                                <input class="left" type="password" placeholder="密码" id="psdLog" name="psdLog" />
+                            </div>
+                            <br />
+                            <div class="line">
+                                <input class="left" type="button" value="登录" onclick="Login()" />
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <form id="reg" name="reg">
+
+                            <div class="line">
+                                <label for="phoneReg">Phone</label>
+                                <input class="left" type="text" placeholder="用户名/手机" id="phoneReg" name="phoneReg" onblur="checkPhone()" />
+                                <input class="no_border message" style="color:red" id="PhoneMsg" disabled="disabled" />
+                            </div>
+
+                            <div class="line">
+                                <label for="psdReg">Psd</label>
+                                <input class="left" type="password" placeholder="密码" id="psdReg" name="psdReg" onblur="checkPsd1()" />
+                                <input class="no_border message" style="color:red" id="PsdMsg1" disabled="disabled" />
+                            </div>
+
+
+                            <div class="line">
+                                <label for="psdAgain">PsdAgain</label>
+                                <input class="left" type="password" placeholder="确认密码" id="psdAgain" name="psdAgain" onblur="checkPsd2()" />
+                                <input class="no_border message" style="color:red" id="PsdMsg2" disabled="disabled" />
+                            </div>
+
+
+                            <div class="line">
+                                <input class="left" type="button" value="注册" onclick="Reg()" />
+                                <input class="no_border message" style="color:red" id="RegMsg" disabled="disabled" />
+                            </div>
+
+                        </form>
+                        
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="index-contact">
+    <h2><span>联系我们</span></h2>
+    <p>
+        <span>地址: </span>浙江省杭州市江干区九盛路9号东方电子商务园11幢4楼<br />
+        <span>邮编: </span>310000<br />
+        <span>电话: </span>400-711-1035<br />
+        <span>手机: </span>13888888888<br />
+        <span>邮箱: </span>tsou@163.com
+    </p>
+</div>
+<img src="images/tel.gif" width="240" height="59" alt="联系我们" />-->
+    </div>
+  </div>
+<div id="copyright">
+    Copyright ©2004-2011&nbsp;<a href="http://www.tsou.cn" title="浙江天搜科技股份有限公司">浙江天搜科技股份有限公司www.tsou.cn</a> All Rights Reserved.<br />
+    <span>地址: </span>浙江省杭州市江干区九盛路9号东方电子商务园11幢4楼　<span>邮编: </span>310000　<br />
+    <span>电话: </span>400-711-1035 <span>手机: </span>13888888888 <span>邮箱: </span>tsou@163.com
+</div>
+</div>
+<script>
+    ajax("logHandler.ashx", function (resText) {
+        if (resText == "no") {
+            return;
+        }
+        else if (resText.charAt(11) == "a") {
+            document.getElementById("mng_able").style.display = "";
+            document.getElementById("level").innerHTML = "管理员";
+        }
+        else {
+            document.getElementById("level").innerHTML = "普通用户";
+        }
+        document.getElementById("log").style.display = "none";
+        document.getElementById("isLog").style.display = "";
+        document.getElementById("LogName").innerHTML = resText.substr(0, 11);
+    })
+
+    function ToDetail(event) {//id,num.other,value
+
+        var par = event.previousSibling.previousSibling;
+        //console.log(par.childNodes);
+        document.getElementById("goodId").innerHTML = par.childNodes.item(1).innerHTML;
+        document.getElementById("goodNum").innerHTML = par.childNodes.item(3).innerHTML;
+        document.getElementById("goodDis").innerHTML = par.childNodes.item(5).innerHTML;
+        document.getElementById("goodValue").innerHTML = par.childNodes.item(7).innerHTML;
+        document.getElementById("goodName").innerHTML = event.title;
+        document.getElementById("goodImg").src = event.childNodes.item(0).src;
+        document.getElementById("goods").style.display = "none";
+        document.getElementById("good").style.display = "";
+        document.getElementById("page").style.display = "none";
+        document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * parseInt(document.getElementById("goodBuyNum").value);
+    }
+    function checkPhone() {
+        var phone = document.getElementById("phoneReg").value;
+        var msg = document.getElementById("PhoneMsg");
+        if (phone.length != 11 || phone.charAt(0) != '1') {
+            msg.value = "请输入正确手机号";
+            setTimeout("clear()", 2000);
+        }
+        else {
+            ajax("checkHandler.ashx?CheckPhone=" + phone, function (resText) {
+                if (resText == "ok") {
+                    return;
+                }
+                else if (resText == "no") {
+                    msg.value = "用户名已存在";
+                    setTimeout("clear()", 2000);
+                    return;
+                }
+                else {
+                    alert(resText);
+                }
+            })
+        }
+    }
+    function checkPsd1() {
+        var a = document.getElementById("psdReg").value;
+        var msg = document.getElementById("PsdMsg1");
+        if (a.length < 6 || a.length > 16) {
+            msg.value = "密码长度6~16";
+            setTimeout("clear()", 2000);
+        }
+    }
+    function checkPsd2() {
+        var a = document.getElementById("psdReg").value;
+        var b = document.getElementById("psdAgain").value;
+        var msg = document.getElementById("PsdMsg2");
+        if (a != b) {
+            msg.value = "密码输入不一致";
+            setTimeout("clear()", 2000);
+        }
+    }
+    function clear() {
+        var list = document.querySelectorAll(".message");
+        //console.log(list[0]);
+        //console.log(list.length);
+        for (var i = 0; i < list.length; ++i) {
+            list[i].value = "";
+        }
+    }
+    function Reg() {
+        var msg1 = document.getElementById("PhoneMsg").value;
+        var msg2 = document.getElementById("PsdMsg1").value;
+        var msg3 = document.getElementById("PsdMsg2").value;
+        var msg = document.getElementById("RegMsg");
+        if (msg1 != "" || msg2 != "" || msg3 != "") {
+            msg.value = "请输入正确信息";
+            setTimeout("clear()", 2000);
+            return;
+        }
+        var msg4 = document.getElementById("phoneReg").value;
+        var msg5 = document.getElementById("psdReg").value;
+        var msg6 = document.getElementById("psdAgain").value;
+        if (msg4 == "" || msg5 == "" || msg6 == "") {
+            msg.value = "请输入完整信息";
+            setTimeout("clear()", 2000);
+            return;
+        }
+        var phone = document.getElementById("phoneReg").value;
+        var psd = document.getElementById("psdReg").value;
+        window.location.href = "regHandler.ashx?phone=" + phone + "&psd=" + psd;
+        //ajax("regHandler.ashx?phone=" + phone + "&psd=" + psd, function (resText) {
+        //    if (resText == "ok") {
+        //        document.getElementById("tabs1").style.display = "none";
+        //        document.getElementById("toLog").style.display = "";
+        //        document.getElementById("isLog").style.display = "none";
+        //        document.getElementById("phoneLog").value = phone;
+        //        document.getElementById("psdLog").value = psd;
+        //    }
+        //    else if (resText == "no") {
+        //        alert("用户已存在");
+        //    }
+        //    else {
+        //        alert("未知错误");
+        //    }
+        //})
+    }
+    function Login() {
+        var phone = document.getElementById("phoneLog").value;
+        var psd = document.getElementById("psdLog").value;
+        ajax("logHandler.ashx?phone=" + phone + "&psd=" + psd, function (resText) {
+            if (resText == "no") {
+                alert("用户名不存在或密码错误");
+                return;
+            }
+            else if (resText.charAt(11) == 'a') {
+                document.getElementById("log").style.display = "none";
+                document.getElementById("isLog").style.display = "";
+                document.getElementById("LogName").innerHTML = phone;
+                document.getElementById("mng_able").style.display = "";
+                document.getElementById("level").innerHTML = "管理员";
+            }
+            else if (resText.charAt(11) == 'p') {
+                document.getElementById("log").style.display = "none";
+                document.getElementById("isLog").style.display = "";
+                document.getElementById("LogName").innerHTML = phone;
+                document.getElementById("level").innerHTML = "普通用户";
+            }
+            else {
+                alert("未知错误");
+            }
+        })
+    }
+    function Logout() {
+        window.location.href = "logoutHandler.ashx";
+    }
+    function goodAdd() {
+        var val = document.getElementById("goodBuyNum");
+        for (var i = 0; i < val.value.length; ++i) {
+            if (val.value.charAt(i) < '0' || val.value.charAt(i) > '9') {
+                val.value = 1;
+                document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+                return;
+            }
+        }
+        var num = parseInt(val.value, 10);
+        if (num >= 100) {
+            val.value = 100;
+            document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+            return;
+        }
+        if (num <= 0) {
+            val.value = 1;
+            document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+            return;
+        }
+        val.value = num + 1;
+        document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+    }
+    function goodSub() {
+        var val = document.getElementById("goodBuyNum");
+        for (var i = 0; i < val.value.length; ++i) {
+            if (val.value.charAt(i) < '0' || val.value.charAt(i) > '9') {
+                val.value = 99;
+                document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+                return;
+            }
+        }
+        var num = parseInt(val.value, 10);
+        if (num >= 100) {
+            val.value = 99;
+            document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+            return;
+        }
+        if (num <= 1) {
+            val.value = 1;
+            document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+            return;
+        }
+        val.value = num - 1;
+        document.getElementById("sum").innerHTML = parseFloat(document.getElementById("goodValue").innerHTML) * val.value;
+    }
+    function ToSubmit() {
+        var msg = document.getElementById("submitMsg");
+
+        if (document.getElementById("isLog").style.display == "none") {
+            msg.style.color = "red";
+            msg.innerHTML = "请登录";
+            setTimeout("clear()", 2000);
+            return;
+        }
+        if (parseInt(document.getElementById("goodBuyNum").value, 10) > 100 || parseInt(document.getElementById("goodBuyNum").value, 10) < 1) {
+            msg.style.color = "red";
+            msg.innerHTML = "购买数量为1~100";
+            setTimeout("clear()", 2000);
+            return;
+        }
+        msg.innerHTML = "";
+        alert("订单已提交，等待审核");
+        window.location.href = "buyHandler.ashx?phone=" + document.getElementById("LogName").innerHTML + "&goodId=" +
+        document.getElementById("goodId").innerHTML + "&num=" + document.getElementById("goodBuyNum").value;
+    }
+    function updateBuy(event) {
+        var s = event.parentNode.parentNode.firstChild.nextSibling.innerHTML;
+        var last2 = event.parentNode.parentNode.lastChild.previousSibling.previousSibling.previousSibling;
+        ajax("checkHandler.ashx?buyId=" + s, function (resText) {
+            if (resText == "ok") {
+                last2.innerHTML = "已审核";
+                last2.style.color = "blue";
+                event.style.color = "gray";
+                event.disabled = true;
+            }
+            else if (resText == "no") {
+                last2.innerHTML = "数量不足";
+                last2.style.color = "red";
+            }
+            else {
+                alert("未知错误");
+            }
+        })
+    }
+    function ToEditValue(event) {
+        var node1 = event.parentNode.previousSibling.previousSibling.firstChild;
+        var node2 = event.parentNode.nextSibling.nextSibling.firstChild;
+        //console.log(node);
+        node1.disabled = false;
+        node1.style.backgroundColor = "white";
+        event.style.display = "none";
+        node2.style.display = "";
+    }
+    
+    function EditValue(event) {
+        var node = event.parentNode.parentNode;
+        //console.log(node.childNodes);
+        var s = node.childNodes.item(5).firstChild.value;
+        //console.log(s);
+        if (s.length >= 10 || s.length <= 0) {
+            node.childNodes.item(11).firstChild.value = "输入有误";
+            node.childNodes.item(11).firstChild.style.color = "red";
+            setTimeout("clear()", 2000);
+            return;
+        }
+        for (var i = 0; i < s.length; ++i) {
+            if (s.charAt(i) < '0' || s.charAt(i) > '9') {
+                node.childNodes.item(11).firstChild.value = "输入有误";
+                node.childNodes.item(11).firstChild.style.color = "red";
+                setTimeout("clear()", 2000);
+                return;
+            }
+        }
+
+        ajax("userMngHandler.ashx?phone=" + node.childNodes.item(3).innerHTML + "&val=" + s, function (resText) {
+            if (resText == "no") {
+                node.childNodes.item(11).firstChild.value = "修改失败";
+                setTimeout("clear()", 2000);
+                return;
+            }
+            else if (resText == 'ok') {
+                node.childNodes.item(11).firstChild.value = "修改成功";
+                node.childNodes.item(11).firstChild.style.color = "blue";
+                node.childNodes.item(5).firstChild.disabled = true;
+                node.childNodes.item(5).firstChild.style.backgroundColor = "#f6f6f6";
+                node.childNodes.item(7).firstChild.style.display = "";
+                event.style.display = "none";
+                setTimeout("clear()", 2000);
+            }
+            else {
+                alert("未知错误");
+            }
+        })
+    }
+    function searchPhone() {
+        var phone = document.getElementById("searchItem");
+        var par = phone.parentNode.lastElementChild.lastChild;
+        if (phone.value == "") {
+            for (var i = 1; i < par.childElementCount; ++i) {
+                par.childNodes.item(2 * i).style.display = "";
+            }
+            return;
+        }
+        
+        //console.log(par.lastElementChild);
+        //console.log(par.childElementCount);
+        for (var i = 1; i < par.childElementCount; ++i) {
+            var cur = par.childNodes.item(2 * i);
+            if (phone.value != cur.childNodes.item(3).innerHTML) {
+                cur.style.display = "none";
+            }
+            else {
+                cur.style.display = "";
+            }
+        }
+    }
+</script>

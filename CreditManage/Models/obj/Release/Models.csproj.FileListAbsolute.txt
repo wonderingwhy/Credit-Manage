@@ -1,0 +1,10 @@
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\Models\bin\Release\Models.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\Models\bin\Release\Models.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\Models\obj\Release\Models.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\Models\obj\Release\Models.pdb
+D:\CreditManage\Models\bin\Release\Models.dll
+D:\CreditManage\Models\bin\Release\Models.pdb
+D:\CreditManage\Models\obj\Release\Models.csprojResolveAssemblyReference.cache
+D:\CreditManage\Models\obj\Release\Models.dll
+D:\CreditManage\Models\obj\Release\Models.pdb

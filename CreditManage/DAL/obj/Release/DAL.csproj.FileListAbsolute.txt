@@ -1,0 +1,14 @@
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\bin\Release\DAL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\bin\Release\DAL.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\bin\Release\Models.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\bin\Release\Models.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\obj\Release\DAL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\DAL\obj\Release\DAL.pdb
+D:\CreditManage\DAL\bin\Release\DAL.dll
+D:\CreditManage\DAL\bin\Release\DAL.pdb
+D:\CreditManage\DAL\bin\Release\Models.dll
+D:\CreditManage\DAL\bin\Release\Models.pdb
+D:\CreditManage\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\CreditManage\DAL\obj\Release\DAL.dll
+D:\CreditManage\DAL\obj\Release\DAL.pdb

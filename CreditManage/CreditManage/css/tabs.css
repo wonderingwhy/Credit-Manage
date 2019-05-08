@@ -1,0 +1,168 @@
+﻿body,div,ul,li{
+
+ margin:0 auto;
+
+ padding:0;
+
+}
+
+body{
+
+ font:12px "宋体";
+
+ /*text-align:center;*/
+
+}
+
+a:link{
+
+ color:#00F;
+
+ text-decoration:none;
+
+}
+
+a:visited {
+
+ color: #00F;
+
+ text-decoration:none;
+
+}
+
+a:hover {
+
+ color: #c00;
+
+ text-decoration:underline;
+
+}
+
+ul{
+
+ list-style:none;
+
+}
+
+.main{
+
+ clear:both;
+
+ padding:8px;
+
+ text-align:center;
+
+}
+
+
+
+/*第二种形式*/
+
+#tabs1{
+
+ text-align:left;
+
+ width:100px;
+
+}
+
+.menu1box{
+
+ position:relative;
+
+ overflow:hidden;
+
+ height:22px;
+
+ width:120px;
+
+ text-align:left;
+
+}
+
+#menu1{
+
+ position:absolute;
+
+ top:0;
+
+ left:0;
+
+ z-index:1;
+
+}
+
+#menu1 li{
+
+ float:left;
+
+ display:block;
+
+ cursor:pointer;
+
+ width:50px;
+
+ text-align:center;
+
+ line-height:21px;
+
+ height:21px;
+
+}
+
+#menu1 li.hover{
+
+ background:#fff;
+
+ border-left:1px solid #eee;
+
+ border-top:1px solid #eee;
+
+ border-right:1px solid #eee;
+
+}
+
+.main1box{
+
+ clear:both;
+
+ margin-top:-1px;
+
+ border:1px solid #eee;
+
+ height:200px;
+
+ width:240px;
+
+
+}
+.line {
+    margin:5px;
+    padding:5px;
+}
+.left {
+    float:left;
+}
+.main1box form label {
+    display:none;
+}
+.main1box input {
+    width:48%;
+}
+.no_border {
+    border:none;
+    background-color:#f6f6f6;
+}
+
+#main1 ul{
+
+ display: none;
+
+}
+
+#main1 ul.block{
+
+ display: block;
+
+}
+

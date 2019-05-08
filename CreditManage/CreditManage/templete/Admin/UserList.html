@@ -1,0 +1,22 @@
+﻿<div id="page_main" class="clearfix">
+    <div class="page-right">
+        <div class="site-nav"><span>当前位置 : </span><a href="mHandler.ashx">公司主页</a> &gt;&gt; <a href="#" title="用户管理">用户管理</a></div>
+        <div>
+            <input id="searchItem" type="text" placeholder="请输入要查找的手机号" /><br /><br />
+            <img src="images/searchbut.gif" onclick="searchPhone()"/><br /><br />
+            <table>
+                <tr><th style="width:150px">用户/手机号</th><th style="width:100px">积分</th><th></th><th></th></tr>
+                #foreach($person in $Data.persons)
+                <tr>
+                    <td style="display:none">$person.Id</td>
+                    <td>$person.Phone</td>
+                    <td><input class="no_border" disabled="disabled" style="width:50px" value="$person.Value" /></td>
+                    <td><input type="button" value="编辑" onclick="ToEditValue(this)"/></td>
+                    <td><input style="display:none" type="button" value="确认修改" onclick="EditValue(this)" /></td>
+                    <td><input class="no_border message" disabled="disabled" /></td>
+                </tr>
+                #end
+            </table>
+        </div>
+    </div>
+    <div class="page-left">

@@ -1,0 +1,44 @@
+﻿<div id="index_main" class="clearfix">
+    <div class="index-left">
+        <div class="index-newproducts">
+            <h2><span>暂无信息</span><a href="goodHandler.ashx"><img src="images/more.gif" width="32" height="5" alt="产品展示" /></a></h2>
+            <div class="productsroll">
+                <div id="LeftArr1"></div>
+                <div id="RightArr1"></div>
+                <ul id="ScrollBox" class="clearfix">
+                    #foreach($good in $Data.goods)
+                    <li><a href="goodHandler.ashx?Id=$good.Id" title="$good.Name"><img src="$good.Img" alt="$good.Name" width="140" height="100" /><span>$good.Name</span></a></li>
+                    #end
+                </ul>
+                <script language="javascript" type="text/javascript">
+var scrollPic_01 = new ScrollPic();
+scrollPic_01.scrollContId   = "ScrollBox"; //内容容器ID
+scrollPic_01.arrLeftId      = "LeftArr1";//左箭头ID
+scrollPic_01.arrRightId     = "RightArr1"; //右箭头ID
+scrollPic_01.frameWidth     = 648;//显示框宽度
+scrollPic_01.pageWidth      = 162; //翻页宽度
+scrollPic_01.speed          = 10; //移动速度(单位毫秒，越小越快)
+scrollPic_01.space          = 5; //每次移动像素(单位px，越大越快)
+scrollPic_01.autoPlay       = true; //自动播放
+scrollPic_01.autoPlayTime   = 3; //自动播放间隔时间(秒)
+scrollPic_01.initialize(); //初始化
+
+                </script>
+            </div>
+        </div>
+        <div class="index-news">
+            <h2><span>新闻中心</span><a href="http://news.baidu.com/ns?cl=2&rn=20&tn=news&word=%E5%A4%A9%E6%90%9C%E7%A7%91%E6%8A%80"><img src="images/more.gif" width="32" height="5" alt="新闻中心" /></a></h2>
+            <ul>
+                <li class="clearfix"><a href="http://nb.people.com.cn/n/2015/0619/c365610-25302352.html" title="互联网企业信用有几分?"><img src="images/index_NewsPic.jpg" alt="互联网企业信用有几分?" width="110" height="80" /></a><h3><a href="http://nb.people.com.cn/n/2015/0619/c365610-25302352.html" title="互联网企业信用有几分?">互联网企业信用有几分?</a></h3><p>　　互联网企业信用有几分?天搜科技等获AAA级评定 ......<a href="http://nb.people.com.cn/n/2015/0619/c365610-25302352.html" title="互联网企业信用有几分?">[详细]</a></p></li>
+                <li><a href="http://mt.sohu.com/20150618/n415269030.shtml" title="移动应用新生态 天搜科技的“相亲创业”火了"><span>2015/6/18</span>-　移动应用新生态 天搜科技的“相亲创业”火了</a></li>
+                <li><a href="http://film.szonline.net/newscnt/1013451.html" title="黄金时代 天搜科技斥巨资圈地移动应用"><span>2015/6/18</span>-　黄金时代 天搜科技斥巨资圈地移动应用</a></li>
+                <li><a href="http://money.163.com/13/0815/16/96B4FBL300253B0H.html" title="天搜科技:引领移动时代新商业模式"><span>2013/8/15</span>-　天搜科技:引领移动时代新商业模式</a></li>
+            </ul>
+        </div>
+        <div class="index-about">
+            <h2><span>关于我们</span><a href="http://baike.baidu.com/link?url=U2S-PAtdwiT90N1FUFtEmONp-0RsXtWJirDnbzDfG45DXWrE_3LIZ_DBL3jpPTp1Wa0k19ZPGdfT7CYv8fnwHa"><img src="images/more.gif" width="32" height="5" alt="关于我们" /></a></h2>
+            <p><img src="images/index_AboutPic.jpg" alt="关于我们" width="145" height="181" /><a href="http://baike.baidu.com/link?url=U2S-PAtdwiT90N1FUFtEmONp-0RsXtWJirDnbzDfG45DXWrE_3LIZ_DBL3jpPTp1Wa0k19ZPGdfT7CYv8fnwHa" title="关于我们">　　浙江天搜科技股份有限公司，浙江股权交易中心挂牌企业（简称：天搜股份，代码：815033），是一家集无线应用、无线软件研发和移动信息化解决方案实施于一体的高科技企业，当前员工1100余人。创立至今，天搜素以推动中国移动信息化产业发展为己任...</a></p>
+        </div>
+    </div>
+    <div class="index-right">
+        

@@ -1,0 +1,22 @@
+﻿<div id="page_main" class="clearfix">
+    <div class="page-right">
+        <div class="site-nav"><span>当前位置 : </span><a href="mHandler.ashx">公司主页</a> &gt;&gt; <a href="#" title="我的积分">我的积分</a></div>
+        <div>
+            <table>
+                <thead>我的积分: $Data.value</thead>
+                <tr><th style="width:100px">积分变化</th><th style="width:200px">日期</th><th style="width: 500px">获得方式</th></tr>
+                #foreach($value in $Data.values)
+                <tr>
+                    #if($value.Num>=0)
+                    <td style="color:blue">+$value.Num</td>
+                    #else
+                    <td style="color:red">$value.Num</td>
+                    #end
+                    <td>$value.Date</td>
+                    <td>$value.Other</td>
+                </tr>
+                #end
+            </table>
+        </div>
+    </div>
+    <div class="page-left">

@@ -1,0 +1,22 @@
+﻿<div id="page_main" class="clearfix">
+    <div class="page-right">
+        <div class="site-nav"><span>当前位置 : </span><a href="mHandler.ashx">公司主页</a> &gt;&gt; <a href="#" title="我的订单">我的订单</a></div>
+        <div>
+            <table>
+                <tr><th style="width:100px">名称</th><th style="width:100px">单价</th><th style="width: 50px">数量</th><th style="width: 100px">总价</th><th style="width: 150px">日期</th><th style="width: 100px">审核情况</th></tr>
+                #foreach($bpg in $Data.data)
+                <tr>
+                    <td>$bpg.good.Name</td><td>¥$bpg.good.Value.00</td><td>$bpg.buy.Num</td><td>¥$bpg.sum.00</td><td>$bpg.buy.Date</td>
+                    #if($bpg.buy.IsCheck==true)
+                    <td><a style="color:blue">已审核</a></td>
+                    #else
+                    <td><a style="color:red">未审核</a></td>
+                    #end
+                    
+                </tr>
+                #end
+            </table>
+        </div>
+    </div>
+    <div class="page-left">
+

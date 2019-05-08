@@ -1,0 +1,18 @@
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\BLL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\BLL.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\DAL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\Models.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\DAL.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\bin\Debug\Models.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\obj\Debug\BLL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\BLL\obj\Debug\BLL.pdb
+D:\CreditManage\BLL\bin\Debug\BLL.dll
+D:\CreditManage\BLL\bin\Debug\BLL.pdb
+D:\CreditManage\BLL\bin\Debug\DAL.dll
+D:\CreditManage\BLL\bin\Debug\Models.dll
+D:\CreditManage\BLL\bin\Debug\DAL.pdb
+D:\CreditManage\BLL\bin\Debug\Models.pdb
+D:\CreditManage\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\CreditManage\BLL\obj\Debug\BLL.dll
+D:\CreditManage\BLL\obj\Debug\BLL.pdb

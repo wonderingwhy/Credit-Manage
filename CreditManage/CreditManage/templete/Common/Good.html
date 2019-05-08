@@ -1,0 +1,43 @@
+﻿<div id="page_main" class="clearfix">
+    <div class="page-right">
+        <div class="site-nav"><span>当前位置 : </span><a href="mHandler.ashx">公司主页</a> &gt;&gt; <a href="goodHandler.ashx" title="商品展示">商品展示</a></div>
+        <div class="page-products">
+            <div style="display: none" id="good">
+                <a id="goodId" style="display:none"></a>
+                <img id="goodImg" src="" /><br /><br /><br />
+                <span>商品名称：<a id="goodName"></a></span><br />
+                <span>商品价格：¥<a id="goodValue"></a><a>.00</a></span><br />
+                <span>商品描述：<a id="goodDis"></a></span><br />
+                <span>剩余存货：<a id="goodNum"></a></span><br />
+                <span>购买数量：<input type="button" value="一" onclick="goodSub()" /><input id="goodBuyNum" type="text" style="width:30px" value="1" /><input type="button" value="十" onclick="goodAdd()" /></span><br />
+                <span>总价：¥<a id="sum"></a>.00</span><br />
+                <button onclick="ToSubmit()" style="color:blue">提交订单</button><br />
+                <span id="submitMsg" class="message"></span>
+            </div>
+            <ul class="clearfix" id="goods" style="">
+                #foreach($good in $Data.goods)
+                <li>
+                    <div style="display:none">
+                        <a>$good.Id</a>
+                        <a>$good.Num</a>
+                        <a>$good.Other</a>
+                        <a>$good.Value</a>
+                    </div>
+                    <a title=$good.Name onclick="ToDetail(this)"><img src=$good.Img width="210" height="150" alt=$good.Name /><span>$good.Name</span></a>
+                </li>
+                #end
+            </ul>
+            <div id="page" class="page_list">
+                <div class="list_info">
+                    共12个/1页
+                    <span class="disabled">&nbsp;&lt;&lt;&nbsp;</span>
+                    <span class="disabled">&nbsp;&lt;&nbsp;</span>
+                    <span class="current">1</span>
+                    <span class="disabled">&nbsp;&gt;&nbsp;</span>
+                    <span class="disabled">&nbsp;&gt;&gt;&nbsp;</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-left">
+

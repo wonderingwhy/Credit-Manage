@@ -1,0 +1,25 @@
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\CreditManage.dll.config
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\CreditManage.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\CreditManage.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\BLL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\DAL.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\Models.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\BLL.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\DAL.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\Models.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\obj\Debug\CreditManage.csprojResolveAssemblyReference.cache
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\obj\Debug\CreditManage.dll
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\obj\Debug\CreditManage.pdb
+D:\users\lenovo\Documents\Visual Studio 2013\Projects\CreditManage\CreditManage\bin\NVelocity.dll
+D:\CreditManage\CreditManage\bin\CreditManage.dll.config
+D:\CreditManage\CreditManage\bin\CreditManage.dll
+D:\CreditManage\CreditManage\bin\CreditManage.pdb
+D:\CreditManage\CreditManage\bin\BLL.dll
+D:\CreditManage\CreditManage\bin\DAL.dll
+D:\CreditManage\CreditManage\bin\Models.dll
+D:\CreditManage\CreditManage\bin\BLL.pdb
+D:\CreditManage\CreditManage\bin\DAL.pdb
+D:\CreditManage\CreditManage\bin\Models.pdb
+D:\CreditManage\CreditManage\obj\Debug\CreditManage.csprojResolveAssemblyReference.cache
+D:\CreditManage\CreditManage\obj\Debug\CreditManage.dll
+D:\CreditManage\CreditManage\obj\Debug\CreditManage.pdb
